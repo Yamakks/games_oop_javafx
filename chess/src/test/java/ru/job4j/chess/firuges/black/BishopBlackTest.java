@@ -17,7 +17,7 @@ class BishopBlackTest {
     @Test
     void whenCopyRight() {
         BishopBlack fig = new BishopBlack(Cell.F8);
-        BishopBlack fig1 = (BishopBlack) fig.copy(Cell.D6);
-        assertThat(fig1.position()).isEqualByComparingTo(Cell.D6);
+        fig = (BishopBlack) fig.copy(Cell.D6);
+        assertThat(fig.position()).isEqualByComparingTo(Cell.D6);
     }
 }
