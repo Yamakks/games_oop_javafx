@@ -24,7 +24,7 @@ public class BishopBlack implements Figure {
     }
 
     public boolean isDiagonal(Cell source, Cell dest) {
-        return false;
+        return true;
     }
 
     @Override
