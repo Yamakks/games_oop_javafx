@@ -21,4 +21,11 @@ class BishopBlackTest {
         fig =  fig.copy(Cell.D6);
         assertThat(fig.position()).isEqualByComparingTo(Cell.D6);
     }
+
+    @Test
+    void whenWayRight() {
+        Figure fig = new BishopBlack(Cell.C1);
+        fig =  fig.copy(Cell.D6);
+        assertThat(fig.position()).isEqualByComparingTo(Cell.D6);
+    }
 }
