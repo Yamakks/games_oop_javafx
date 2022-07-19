@@ -1,11 +1,15 @@
 package ru.job4j.chess.firuges.black;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.Assertions.*;
+import ru.job4j.chess.ImpossibleMoveException;
 import ru.job4j.chess.firuges.Cell;
 import ru.job4j.chess.firuges.Figure;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatException;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class BishopBlackTest {
 
@@ -23,9 +27,10 @@ class BishopBlackTest {
     }
 
     @Test
-    void whenWayRight() {
+    void whenWayIsNotDiagonal() throws ImpossibleMoveException {
         Figure fig = new BishopBlack(Cell.C1);
-        fig =  fig.copy(Cell.D6);
-        assertThat(fig.position()).isEqualByComparingTo(Cell.D6);
+        Throwable thrown = assertThrows(ImpossibleMoveException.class, () -> fig.way(Cell.H5));
+        Assertions.assertNotNull(thrown.getMessage());
+
     }
 }
