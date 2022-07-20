@@ -7,8 +7,6 @@ import ru.job4j.chess.firuges.Cell;
 import ru.job4j.chess.firuges.Figure;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatException;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class BishopBlackTest {
@@ -27,7 +25,7 @@ class BishopBlackTest {
     }
 
     @Test
-    void whenWayIsNotDiagonal() throws ImpossibleMoveException {
+    void whenWayIsNotDiagonal() {
         Figure fig = new BishopBlack(Cell.C1);
         Throwable thrown = assertThrows(ImpossibleMoveException.class, () -> fig.way(Cell.H5));
         Assertions.assertNotNull(thrown.getMessage());

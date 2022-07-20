@@ -4,6 +4,8 @@ import ru.job4j.chess.ImpossibleMoveException;
 import ru.job4j.chess.firuges.Cell;
 import ru.job4j.chess.firuges.Figure;
 
+import static ru.job4j.chess.firuges.Cell.findBy;
+
 public class BishopBlack implements Figure {
     private final Cell position;
 
@@ -30,7 +32,7 @@ public class BishopBlack implements Figure {
         int deltaX = x > dest.getX() ? 1 : -1;
         int deltaY = y > dest.getY() ? 1 : -1;
         for (int index = 0; index < size; index++) {
-            steps[index] = Cell.findBy(x - deltaX * index, y - deltaY * index);
+            steps[index] = findBy(x + deltaX * index, y + deltaY * index);
         }
         return steps;
     }
