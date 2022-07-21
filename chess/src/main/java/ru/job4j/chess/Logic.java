@@ -25,7 +25,7 @@ public final class Logic {
 
         for (Figure index : figures) {
             for (Cell ind : steps) {
-                if (index.position() == ind) {
+                if (index.position().equals(ind)) {
                     throw new OccupiedCellException("Cell is occupied");
                 }
             }
